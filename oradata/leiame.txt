@@ -1,0 +1,1 @@
+Aqui serão persistidos os dados do oracle
