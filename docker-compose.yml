@@ -1,0 +1,17 @@
+# https://hub.docker.com/r/gvenzl/oracle-xe
+# https://dba.stackexchange.com/questions/291965/unable-to-connect-to-an-oracle-12c-docker-container
+#
+# jean - 27/01/2022
+
+version: '3.7'
+services:
+  database:
+    image: gvenzl/oracle-xe:latest
+    container_name: oracle
+    environment:
+      ORACLE_PASSWORD: jean123 # pass para o usuário SYSTEM
+    volumes:
+      - "./oradata:/opt/oracle/oradata:rw" # diretorio para persistir dados dos BDs
+      - "./dpdump:/opt/oracle/admin/XE/dpdump:rw" # diretorio dos dumps
+    ports:
+      - 1521:1521
